@@ -5,6 +5,7 @@
 		<%= @project.body %><br />
 		
 		<%= link_to 'Edit', edit_project_path(@project) %><br />
-		<%= link_to 'Back', projects_url %>
+		<%= link_to 'Back', projects_url %> <br />
+		<%= link_to 'New Ticket', new_project_ticket_path(@project) %>
 	</li>
 </ul>
