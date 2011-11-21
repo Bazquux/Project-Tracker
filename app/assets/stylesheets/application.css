@@ -175,14 +175,16 @@ menu, #ticket .state, .states {
 
 #success{
     padding: .5em;
-    color: #FFF;
-    background-color: #3399FE;
+    color: #000;
+    background: #eaeaea;
+  	border: 1px solid #e0e0e0;
     font: 13pt "Myriad Pro", Helvetica;
     -webkit-font-smoothing: antialiased;
 }
 
 #error{
-    background-color: #3399FE;
+    background: #eaeaea;
+  	border: 1px solid #e0e0e0;
     padding: .5em;
     color: #9D0000;
     font:13pt "Myriad Pro", Helvetica;
@@ -191,8 +193,9 @@ menu, #ticket .state, .states {
 
 #notice{
     padding: .5em;
-    color: #FFF;
-    background-color: #3399FE;
+    color: #000;
+    background: #eaeaea;
+  	border: 1px solid #e0e0e0;
     font:13pt "Myriad Pro", Helvetica;
     -webkit-font-smoothing: antialiased;
 }
@@ -200,8 +203,9 @@ menu, #ticket .state, .states {
 
 #alert{
     padding: .5em;
-    color: #FFF;
-    background-color: #3399FE;
+    color: #000;
+    background: #eaeaea;
+  	border: 1px solid #e0e0e0;
     font:13pt "Myriad Pro", Helvetica;
     -webkit-font-smoothing: antialiased;
 }

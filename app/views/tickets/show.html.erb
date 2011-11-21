@@ -1,5 +1,5 @@
-<div id="ticket">
-	<h2><%= @ticket.name %></h2>
+<div id="ticket">	
+	<b><%= @ticket.name %></b> [<b><small>created by :  <%= @ticket.user.username %></small></b>]
 	<%= simple_format(@ticket.body) %>
 	
 	<%= link_to "Edit Ticket", [:edit, @project, @ticket] %><br />
