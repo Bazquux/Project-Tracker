@@ -9,15 +9,6 @@
 	<%= link_to 'Edit', edit_project_path(project) %> <br />
 	<%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br />
 	</li>
-	
-	<h2>Project Tickets</h2>
-	<% project.tickets.each do |ticket| %>
-		<li  class="tickets">
-			<b><%= ticket.name %></b><br />
-			<%= ticket.body %><br />
-		</li>
-	<% end%>
-			
 </ul>
 
 <% end %>

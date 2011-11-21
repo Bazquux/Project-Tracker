@@ -1,3 +1,12 @@
+<script type="text/javascript">
+	$(function(){
+		$(".tickets").css("list-style","none");
+		$(".tickets").css("background-color","#ccc");
+		$(".tickets").css("margin-bottom","10px");
+		$(".tickets").css("padding","10px");
+	})
+</script>
+
 <h2><%= @project.name %></h2>
 <ul class="projects">
 	<li>
@@ -6,6 +15,20 @@
 		
 		<%= link_to 'Edit', edit_project_path(@project) %><br />
 		<%= link_to 'Back', projects_url %> <br />
-		<%= link_to 'New Ticket', new_project_ticket_path(@project) %>
 	</li>
+	
+		
+	<h2>Project Tickets</h2>
+	
+	<% @project.tickets.each do |ticket| %>
+	<ul class="tickets">
+		<li>
+			<b><%= link_to ticket.name, [@project, ticket] %></b><br />
+			<%= ticket.body %><br />
+		</li>
+	</ul>
+	<% end%>
+	
+	<%= link_to 'New Ticket', new_project_ticket_path(@project) %>	
+	
 </ul>
