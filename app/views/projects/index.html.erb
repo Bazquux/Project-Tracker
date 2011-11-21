@@ -1,0 +1,16 @@
+<h1>Projects Listing</h1>
+
+<% @projects.each  do |project| %>
+ <ul class="projects">
+  	<li>
+	<%= link_to project.name, project %><br />
+	<%= project.body %><br />
+	<%= link_to 'Show', project %> <br />
+	<%= link_to 'Edit', edit_project_path(project) %> <br />
+	<%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br />
+
+	</li>
+</ul>
+<% end %>
+
+<%= link_to 'New Project', new_project_path %>

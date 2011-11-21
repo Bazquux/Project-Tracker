@@ -3,13 +3,14 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 
 gem 'sqlite3'
-
+gem 'jquery-rails'
 gem 'dynamic_form'
 gem 'devise'
 gem 'activeadmin'
 gem 'will_paginate','>3.0'
 gem 'declarative_authorization'
 gem 'cancan'
+gem 'formtastic'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pt</title>
+  <title><%= @title || "Project Tracker" %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% flash.each do |key , value| %>
+	<div id="<%= key %>"> <%= value%> </div>
+<% end %>
 <%= yield %>
 
 </body>
