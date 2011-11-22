@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 	
 	before_filter :authenticate_user!, :except => [:index, :show]
 	before_filter :find_project, :except => [:index, :new, :create]
-	
+	before_filter :authorize_admin!, :except => [:index, :show]
 	
 	def index
 		@projects = Project.all

@@ -1,15 +1,18 @@
 Pt::Application.routes.draw do
-	
+
   devise_for :users
 	
 	resources :projects do
 		resources :tickets
-	end
+	end	
+		
+  namespace :admin do
+  	root :to => "base#index"
+  	resources :users
+  end
 	
 	root :to => "projects#index"
-	
-	
-	
+		
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -6,11 +6,15 @@
 	<%= link_to project.name, project %><br />
 	<%= project.body %><br />
 	<%= link_to 'Show', project %> <br />
+<%= admins_only do %>	
 	<%= link_to 'Edit', edit_project_path(project) %> <br />
 	<%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br />
+<% end %>	
 	</li>
 </ul>
 
 <% end %>
 
-<%= link_to 'New Project', new_project_path %>
+<%= admins_only do %>
+	<%= link_to 'New Project', new_project_path %>
+<% end %>
