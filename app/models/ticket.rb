@@ -5,5 +5,6 @@ class Ticket < ActiveRecord::Base
   validates :name , :presence => true 
 	validates :body , :presence => true
   
+  has_attached_file :asset
   
 end

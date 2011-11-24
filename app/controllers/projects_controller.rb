@@ -1,8 +1,7 @@
 class ProjectsController < ApplicationController
-	
+	before_filter :authorize_admin!, :except => [:index, :show]
 	before_filter :authenticate_user!, :only => [:index, :show]
 	before_filter :find_project, :except => [:index, :new, :create]
-	before_filter :authorize_admin!, :except => [:index, :show]
 	
 	def index
 		@projects = Project.for(current_user).all
@@ -46,16 +45,14 @@ class ProjectsController < ApplicationController
 		flash[:notice] = "Project has been deleted"
 		redirect_to root_url
 	end
-	private
 	
+	private
+
 	def find_project
-		@project = if current_user.admin?
-			Project.find(params[:id])
-		else
-			@project = Project.readable_by(current_user).find(params[:id])
-		end
-	rescue ActiveRecord::RecordNotFound
-		flash[:alert] = "The project you were looking for could not be found"
-		redirect_to projects_path
-	end
+      @project = Project.for(current_user).find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The project you were looking" +
+                      " for could not be found."
+      redirect_to projects_path
+  end
 end

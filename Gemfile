@@ -11,6 +11,7 @@ gem 'will_paginate','>3.0'
 gem 'declarative_authorization'
 gem 'cancan'
 gem 'formtastic'
+gem 'paperclip'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

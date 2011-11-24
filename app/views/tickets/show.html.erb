@@ -6,6 +6,17 @@
 		<%= link_to "Edit Ticket", [:edit, @project, @ticket] %><br />
 	<% end %>
 	
+	<% if @ticket.asset.exists? %>
+		<h3>Attached file</h3>
+			<div class="asset">
+				<p> <%= link_to File.basename(@ticket.asset.path), @ticket.asset.url %> </p>
+				<p><small><%= number_to_human_size(@ticket.asset.size) %>
+					(<%= @ticket.asset.content_type %>)
+				</small> </p>
+			</div>
+	<% end %>
+	
+	
 	<%= authorized?("delete tickets", @project) do %>	
 		<%= link_to "Delete Ticket" , 
 					[@project, @ticket], 

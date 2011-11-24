@@ -1,8 +1,10 @@
-<%= semantic_form_for [@project, @ticket] do |f| %>
+<%= semantic_form_for [@project, @ticket], :html => { :multipart => true } do |f| %>
 	<%= f.inputs do %>
 		<%= f.input :name , :label => "Ticket Name" %>
 		<%= f.input :body , :label => "Ticket Description" %>
 	<% end %>
 	
+	<%= f.label :asset, "File" %>
+	<%= f.file_field :asset %><br />
 	<%= f.buttons %>
 <% end %>
