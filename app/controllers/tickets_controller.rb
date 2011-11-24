@@ -1,9 +1,8 @@
 class TicketsController < ApplicationController
-	
+	before_filter :authenticate_user!
 	before_filter :find_project
 	before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
-	before_filter :authenticate_user!, :except => [:index, :show]
-	
+		
 	def show		
 	end
 	
@@ -40,13 +39,20 @@ class TicketsController < ApplicationController
 		flash[:notice] = 'Ticket has been deleted'
 		redirect_to @project
 	end
+	
 	private
 	
 	def find_project
-		@project = Project.find(params[:project_id])
+		@project = Project.for(current_user).find(params[:project_id])
+	rescue
+		ActiveRecord::RecordNotFound
+		redirect_to root_path, alert: "The project you were looking for does not exist"
 	end
 	
 	def find_ticket
 		@ticket = @project.tickets.find(params[:id])
+	rescue
+		ActiveRecord::RecordNotFound
+		redirect_to root_path, alert: "The ticket you were looking for does not exist"
 	end
 end
