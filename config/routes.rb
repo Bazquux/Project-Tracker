@@ -2,6 +2,7 @@ Pt::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations" }
 	
+	resources :files
 	resources :projects do
 		resources :tickets
 	end	
