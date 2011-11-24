@@ -77,7 +77,7 @@ ul#tickets li {
 #permissions td, #permissions th {
   padding: 10px;
   margin: 0px;
-  text-align: center;
+  text-align: left;
 }
 
 #permissions thead th {
