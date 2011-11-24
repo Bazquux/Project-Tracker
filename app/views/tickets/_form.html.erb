@@ -4,7 +4,13 @@
 		<%= f.input :body , :label => "Ticket Description" %>
 	<% end %>
 	
-	<%= f.label :asset, "File" %>
-	<%= f.file_field :asset %><br />
+	<% number = 0 %>
+	<%= f.fields_for :assets do |asset| %>
+		<p>
+			<%= asset.label :asset, "File ##{number += 1}" %>
+			<%= asset.file_field :asset %>
+		</p>
+	<% end %>
+	
 	<%= f.buttons %>
 <% end %>
