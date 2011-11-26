@@ -6,7 +6,8 @@ class TicketsController < ApplicationController
 	before_filter :authorize_update!, :only => [:edit, :update]
 	before_filter :authorize_delete!, :only => [:destroy]
 		
-	def show		
+	def show	
+		@comment = @ticket.comments.build	
 	end
 	
 	def new

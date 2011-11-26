@@ -3,10 +3,15 @@ Pt::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
 	
 	resources :files
+	
 	resources :projects do
 		resources :tickets
 	end	
 		
+	resources :tickets do
+		resources :comments
+	end
+	
   namespace :admin do
   	root :to => "base#index"
   	resources :users do

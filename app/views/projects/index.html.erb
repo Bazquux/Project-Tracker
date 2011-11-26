@@ -1,20 +1,11 @@
-<h1>Projects Listing</h1>
-
-<% @projects.each  do |project| %>
- <ul class="projects">
-  	<li>
-	<%= link_to project.name, project %><br />
-	<%= project.body %><br />
-	<%= link_to 'Show', project %> <br />
-<%= admins_only do %>	
-	<%= link_to 'Edit', edit_project_path(project) %> <br />
-	<%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %><br />
-<% end %>	
-	</li>
-</ul>
-
-<% end %>
-
 <%= admins_only do %>
-	<%= link_to 'New Project', new_project_path %>
+  <%= link_to "New Project", new_project_path %>
 <% end %>
+
+<h2>Projects</h2> 
+
+<ul id='projects'>
+  <% @projects.each do |project| %>
+    <li><%= link_to project.name, project %></li>
+  <% end %>
+</ul>

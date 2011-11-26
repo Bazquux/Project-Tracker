@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   
   has_many :tickets
   has_many :permissions
+  has_many :comments
   
   def to_s
     "#{email} (#{admin? ? "Admin" : "User"})"
