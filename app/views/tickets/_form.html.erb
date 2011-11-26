@@ -3,7 +3,7 @@
 		<%= f.input :name , :label => "Ticket Name" %>
 		<%= f.input :body , :label => "Ticket Description" %>
 	<% end %>
-	
+
 	<% number = 0 %>
 	<%= f.fields_for :assets do |asset| %>
 		<p>
@@ -11,6 +11,6 @@
 			<%= asset.file_field :asset %>
 		</p>
 	<% end %>
-	
+
 	<%= f.buttons %>
 <% end %>
