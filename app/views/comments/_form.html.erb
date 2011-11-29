@@ -8,6 +8,10 @@
 		<%= f.text_area :text %>		
 	</div>
 	<div>
+		<%= f.label :state_id %><br />
+		<%= f.select :state_id, @states.map {|s|[s.name, s.id] }, :selected => @ticket.state_id %>
+	</div>
+	<div>
 		<%= f.submit %>
 	</div>
 <% end %>

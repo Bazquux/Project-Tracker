@@ -1,5 +1,6 @@
 <div id="ticket">	
 	<b><%= @ticket.name %></b> [<b><small>created by :  <%= @ticket.user.username %></small></b>]
+	<%= render @ticket.state if @ticket.state %>
 	<%= simple_format(@ticket.body) %>
 	
 	<%= authorized?("edit tickets", @project) do %>	
