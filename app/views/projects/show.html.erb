@@ -26,6 +26,10 @@
 	<ul class="tickets">
 		<li>
 			<b><%= link_to ticket.name, [@project, ticket] %></b><br />
+			<li>
+				<%= render ticket.state if ticket.state %><br />
+				#<%= ticket.id %> - <%= link_to ticket.name, [@project, ticket]%>
+			</li>
 			<%= ticket.body %><br />
 		</li>
 	</ul>

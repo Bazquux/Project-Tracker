@@ -14,9 +14,16 @@ Pt::Application.routes.draw do
 	
   namespace :admin do
   	root :to => "base#index"
+  	resources :states do
+  		member do
+  			get :make_default
+  		end
+  	end
+  	
   	resources :users do
   		resources :permissions
   	end
+  	
   end
 	
 	put '/admin/users/:user_id/permissions',
