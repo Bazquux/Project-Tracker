@@ -21,7 +21,8 @@ html {
 }
 
 body {
-  font: 11pt "Myriad Pro", Helvetica;
+  font-family:"Lucida Grande", Helvetica;
+  font-size:11pt;
   margin: 5px 10% 0px 10%;
   height: 100%;
   padding: 30px;
@@ -42,6 +43,7 @@ a {
 }
 
 textarea {
+  font-family:"Lucida Grande", Helvetica;
   padding: 3px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -53,11 +55,13 @@ input[type=file] {
 }
 
 input[type=text],input[type=password],input[type=email]{
+	font-family:"Lucida Grande", Helvetica;
 	width: 35%;
 	padding: .25em;	
 }
 
 input[type=submit]{
+	font-family:"Lucida Grande", Helvetica;
 	cursor: pointer;
 	padding: 3px 10px 3px 10px;
 }

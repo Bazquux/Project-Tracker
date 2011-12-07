@@ -1,8 +1,16 @@
-<%= semantic_form_for [@project, @ticket], :html => { :multipart => true } do |f| %>
-	<%= f.inputs do %>
-		<%= f.input :name , :label => "Ticket Name" %>
-		<%= f.input :body , :label => "Ticket Description" %>
-	<% end %>
+<%= form_for [@project, @ticket], :html => { :multipart => true } do |f| %>
+	<%= f.error_messages %>
+	<div>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %><br />
+	</div>
+	<div>
+		<%= f.label :body %><br />
+		<%= f.text_area :body %><br />
+	</div>
+	<div>
+		<%= render 'shared/tags' %>
+	</div>
 
 	<% number = 0 %>
 	<%= f.fields_for :assets do |asset| %>
@@ -12,5 +20,5 @@
 		</p>
 	<% end %>
 
-	<%= f.buttons %>
+	<%= f.submit %>
 <% end %>

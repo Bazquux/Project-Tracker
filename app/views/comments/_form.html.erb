@@ -7,9 +7,14 @@
 		<%= f.label :text %><br />
 		<%= f.text_area :text %>		
 	</div>
+	<% authorized?(:"change states", @project) do %>
+		<div>
+			<%= f.label :state_id %><br />
+			<%= f.select :state_id, @states.map {|s|[s.name, s.id] }, :selected => @ticket.state_id %>
+		</div>
+	<% end %>
 	<div>
-		<%= f.label :state_id %><br />
-		<%= f.select :state_id, @states.map {|s|[s.name, s.id] }, :selected => @ticket.state_id %>
+		<%= render 'shared/tags' %>
 	</div>
 	<div>
 		<%= f.submit %>
